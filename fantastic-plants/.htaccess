@@ -1,0 +1,47 @@
+# Configure a custom error document response for HTTP response status of 404
+
+ErrorDocument 404 /~aruzek/error/status404.php
+
+
+
+
+# Set expiration headers so that CSS, JavaScript, and image JPEG, GIF, PNG files are cached.
+
+ExpiresActive On
+
+ExpiresByType image/jpeg A604800
+# JPEG expires in 30 days because this is not as likely to be updated
+
+ExpiresByType image/gif A604800
+# GIF expires in 30 days because this is not as likely to be updated
+
+ExpiresByType image/png A604800
+# PNG expires in 30 days because this is not as likely to be updated
+
+ExpiresByType text/css A604800
+# CSS expires in 7 days because this is likely to be updated
+
+ExpiresByType text/javascript A604800
+# JS expires in 7 days because this is likely to be updated
+
+ExpiresByType application/javascript A604800
+# JS expires in 7 days
+
+
+
+
+#Set an output filter so that HTML, CSS, and JavaScript files are compressed before they are sent to the web browser.
+
+AddOutputFilterByType DEFLATE text/html
+# Compress HTML
+
+AddOutputFilterByType DEFLATE text/css
+# Compress CSS
+
+AddOutputFilterByType DEFLATE text/javascript
+# Compress JS
+
+AddOutputFilterByType DEFLATE application/javascript
+# Compress JS
+
+
